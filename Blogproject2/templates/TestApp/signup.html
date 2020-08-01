@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "TestApp/base.html" %}
+{%load TestApp_tags %}
+{%block title_block%}Signup{%endblock%}
+{% load staticfiles%}
+  {% block content_block%}
+  <span class="de"><h2>Welcome To Signup View...</h2></span>
+  <hr />
+  <form method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <button type="submit" name="button">Signup</button>
+  </form>
+  {%endblock%}

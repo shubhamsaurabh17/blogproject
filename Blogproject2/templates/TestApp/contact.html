@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "TestApp/base.html" %}
+{%load TestApp_tags %}
+{%block title_block%}Contact{%endblock%}
+{% load staticfiles%}
+  {% block content_block%}
+  <span class="de"><h1>Contact Information</h1></span>
+  <hr />
+  <hr />
+  <div id="cont">
+  <p class="coo">Name: Shubham Saurabh<br >
+  Phone: 7549692084<br />
+  Email: s7549692084@gmail.com<br />
+  Linkedin: <a href="https://www.linkedin.com/in/shubham-saurabh-1702/" target="_blank">https://www.linkedin.com/in/shubham-saurabh-1702/</a><br />
+  HackerRank: <a href="https://www.hackerrank.com/s7549692084" target="_blank">https://www.hackerrank.com/s7549692084</a><br />
+  Codechef: <a href="https://www.codechef.com/users/shubham_1799" target="_blank">https://www.codechef.com/users/shubham_1799</a><br />
+</p>
+<button type="button" name="button"><a href="mailto:s7549692084@gmail.com" target="_blank">Mail To Shubham</a></button>
+</div>
+
+  {%endblock%}

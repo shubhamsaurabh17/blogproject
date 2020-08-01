@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "TestApp/base.html" %}
+{%load TestApp_tags %}
+{%block title_block%}Feedback{%endblock%}
+{% load staticfiles%}
+  {% block content_block%}
+  <span class="de"><h2>Plaese Give Your valuable Feedback...</h2></span>
+  <hr />
+  <form method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <button type="submit" name="button">Submit Feedback</button>
+  </form>
+  {%endblock%}

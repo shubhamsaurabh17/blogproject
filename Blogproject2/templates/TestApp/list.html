@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "TestApp/base.html"%}
+{% load staticfiles%}
+{% block title_block%}Content{% endblock%}
+
+{% block content_block%}
+<h1 class="hd">Welcome To Shubham's Personal Blog</h1>
+<hr />
+{%if tag%}
+<h2>Posts tagged with "{{tag.name}}"</h2>
+{%endif%}
+{% for x in data%}
+<h2><a href="{{x.get_absolute_url}}">{{x.title}}</a></h2>
+<p>Tags:
+{%for tag in x.tags.all %}
+<button><a href="{%url "post_list_by_tag_name" tag.slug %}">{{tag.name}}</a></button>
+{%if not forloop.last%} {%endif%}
+{%endfor%}
+</p>
+<p id="date">Published On {{x.publish}} By {{x.author|title}}</p>
+  <span class="dt"><p>{{x.body|truncatewords:50|linebreaks}}</p></span>
+<hr/>
+{%endfor%}
+{% include 'TestApp/paginator.html' with page=data%}
+{%endblock%}

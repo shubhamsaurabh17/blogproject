@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "TestApp/base.html" %}
+{%load TestApp_tags %}
+{% load staticfiles%}
+{%block title_block%}Logout{%endblock%}
+  {% block content_block%}
+<span class="de"><h2>Logout</h2></span>
+  <hr />
+<h3>We Feel Sorry To Let You Go...</h3>
+<p>Plaese <a href="/accounts/login">Click Here </a>To Login Again...</p>
+  {%endblock%}
